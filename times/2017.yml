@@ -1,0 +1,261 @@
+locations:
+  - name: Haldern Pop Bar
+    days:
+      - day: '2017-08-10'
+        bands:
+          - name: Bergfilm
+            start: '14:00'
+            stop: '14:40'
+          - name: Skinny Living
+            start: '15:30'
+            stop: '16:10'
+          - name: Little Hurricane
+            start: '16:40'
+            stop: '17:20'
+      - day: '2017-08-11'
+        bands:
+          - name: TootArd
+            start: '11:30'
+            stop: '12:15'
+          - name: Aldous Harding
+            start: '12:40'
+            stop: '13:20'
+          - name: Emmsje Gauti
+            start: '14:10'
+            stop: '15:00'
+      - day: '2017-08-12'
+        bands:
+          - name: Slotface
+            start: '13:00'
+            stop: '13:45'
+          - name: White Whine
+            start: '14:45'
+            stop: '15:00'
+  - name: Jugendheim
+    days:
+      - day: '2017-08-10'
+        bands:
+          - name: 'Lutz Jaekel - Syrien ohne Krieg'
+            start: '11:00'
+            stop: '13:00'
+      - day: '2017-08-12'
+        bands:
+          - name: 'Richard Foster im Gespraech mit Keith Harris'
+            start: '10:00'
+            stop: '11:00'
+          - name: 'Norbert Niemann & Monika Pirch'
+            start: '11:00'
+            stop: '12:00'
+          - name: 'John Joseph Brill'
+            start: '12:20'
+            stop: '12:50'
+          - name: 'Joseph J. Jones'
+            start: '13:50'
+            stop: '14:50'
+  - name: Mainstage
+    days:
+      - day: '2017-08-10'
+        bands:
+          - name: Von Wegen Lisbeth
+            start: '18:00'
+            stop: '18:45'
+          - name: Get Well Soon
+            start: '19:15'
+            stop: '20:00'
+          - name: A Blaze of Feather
+            start: '20:45'
+            stop: '21:45'
+          - name: Conor Oberst
+            start: '22:14'
+            stop: '23:15'
+      - day: '2017-08-11'
+        bands:
+          - name: Clueso
+            start: '00:00'
+            stop: '01:30'
+          - name: Penguin Cafe
+            start: '15:00'
+            stop: '15:45'
+          - name: Faber
+            start: '16:15'
+            stop: '17:00'
+          - name: Blaudzun
+            start: '17:30'
+            stop: '18:30'
+          - name: AnnenMayKantereit
+            start: '19:00'
+            stop: '20:15'
+          - name: BADBADNOOTGOOD
+            start: '20:45'
+            stop: '21:45'
+          - name: Benjamin Clementine
+            start: '22:15'
+            stop: '23:30'
+      - day: '2017-08-11'
+        bands:
+          - name: Kaeptn Peng & Die Tntakel von Delphi
+            start: '00:00'
+            stop: '01:15'
+          - name: Messer
+            start: '13:45'
+            stop: '14:30'
+          - name: Daniel Brandt
+            start: '15:00'
+            stop: '15:45'
+          - name: 'Radical Face'
+            start: '16:15'
+            stop: '17:15'
+          - name: Nick Waterhouse
+            start: '17:45'
+            stop: '18:45'
+          - name: Bear's Den
+            start: '19:15'
+            stop: '20:15'
+          - name : The Afghan Whigs
+            start: '20:45'
+            stop: '22:00'
+          - name: Kate Tempest
+            start: '22:30'
+            stop: '23:30'
+    - day: '2017-08-13'
+      bands:
+        - name: Bilderbuch
+          start: '00:15'
+          stop: '01:45'
+  - name: Spiegeltent
+    - day: '2017-08-10'
+      bands:
+        - name: Nothing
+          start: '17:00'
+          stop: '17:45'
+        - name: Hurray for the Riff Raff
+          start: '18:30'
+          stop: '19:15'
+        - name: Parcels
+          start: '20:00'
+          stop: '20:45'
+        - name: Giant Rooks
+          start: '21:30'
+          stop: '22:15'
+        - name: Lisa Hannigan
+          start: '23:15'
+          stop: '00:00'
+    - day: '2017-08-11'
+      bands:
+        - name: Shame
+          start: '00:30'
+          stop: '01:15'
+        - name: The James Hunter Six
+          start: '01:45'
+          stop: '02:45'
+        - name: Mammal Hands
+          start: '15:45'
+          stop: '16:30'
+        - name: Mammut
+          start: '17:00'
+          stop: '17:45'
+        - name: The Amazons
+          start: '18:30'
+          stop: '19:15'
+        - name: Loyle Carner
+          start: '20:15'
+          stop: '21:00'
+        - name: Die hoechste Eisenbahn
+          start: '21:30'
+          stop: '22:15'
+        - name: Matthew and the Atlas
+          start: '23:00'
+          stop: '23:45'
+    - day: '2017-08-12'
+      bands:
+        - name: The Inspector Cluzo
+          start: '00:30'
+          stop: '01:30'
+        - name: ME + MARIE
+          start: '14:30'
+          stop: '15:15'
+        - name: Voodoo Juergens
+          start: '15:45'
+          stop: '16:30'
+        - name: Wolf Maahn
+          start: '17:00'
+          stop: '18:00'
+        - name: Wildes
+          start: '18:30'
+          stop: '19:15'
+        - name: Julia Jacklin
+          start: '19:45'
+          stop: '20:30'
+        - name: Let's Eat Grandma
+          start: '20:50'
+          stop: '21:30'
+        - name: Klangstof
+          start: '22:00'
+          stop: '22:45'
+        - name: Tom Grennan
+          start: '23:30'
+          stop: '00:15'
+    - day: '2017-08-13'
+      bands:
+        - name: Idles
+          start: '01:15'
+          stop: '02:00'
+  - name: church
+    days:
+      - day: '2017-08-10'
+        bands:
+          - name: Matt Maltese
+            start: '14:30'
+            stop: '15:05'
+          - name: Isaac Gracie
+            start: '15:15'
+            stop: '15:50'
+          - name: AJIMAL
+            start: '16:00'
+            stop: '16:40'
+          - name: Martin Kohlsted
+            start: '17:00'
+            stop: '17:45'
+          - name: Mahalia
+            start: '18:00'
+            stop: '18:35'
+          - name: Charlie Cunningham
+            start: '19:00'
+            stop: '19:50'
+      - day: '2017-08-11'
+        bands:
+          - name: Cantus Domus
+            start: '11:00'
+            stop: '11:30'
+          - name: Joep Beving
+            start: '11:35'
+            stop: '12:10'
+          - name: Luke Elliot
+            start: '12:20'
+            stop: '13:00'
+          - name: 'Mario Batkovic'
+            start: '13:30'
+            stop: '14:15'
+          - name: Julie Byrne
+            start: '14:30'
+            stop: '15:10'
+          - name: Cantus Domus & Mads Brauer
+            start: '15:30'
+            stop: '16:30'
+  - name: Trivago Campus
+    days:
+      - day: '2017-08-10'
+        bands:
+          - name: Rolf Schroemgens (trivago); Daniel Fontana (Bad Bonn Kilbi)
+            start: '20:00'
+            stop: '20:45'
+  - name: Keusgen Tonstudio
+    days:
+      - day: '2017-08-12'
+        bands:
+          - name: Joe Fox
+            start: '17:00'
+            stop: '17:35'
+          - name: Mavi Phoenix
+            start: '18:00'
+            stop: '18:35'
