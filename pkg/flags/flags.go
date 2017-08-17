@@ -9,13 +9,13 @@ import (
 
 //flags for
 type Flags struct {
-	PostgresHost  string
-	PostgresUser  string
-	PostgresPass  string
-	PostgresPort  int
-	AlgoliaKey    string
-	AlgoliaSecret string
-	ServerPort    int
+	PostgresHost string
+	PostgresUser string
+	PostgresPass string
+	PostgresPort int
+	AlgoliaKey   string
+	AlgoliaID    string
+	ServerPort   int
 }
 
 func ParseFlags() Flags {
@@ -28,7 +28,7 @@ func ParseFlags() Flags {
 	flag.IntVar(&f.PostgresPort, "pport", 5432, "postgres port")
 	//algolia
 	flag.StringVar(&f.AlgoliaKey, "algoliakey", "", "algolia key")
-	flag.StringVar(&f.AlgoliaSecret, "algoliasecret", "", "algolia secret")
+	flag.StringVar(&f.AlgoliaID, "algoliaid", "", "algolia id")
 	//parse from envrionment?
 	env := flag.Bool("env", false, "if true, parses flags from environment(besides this, obviously). Uses the names of the other options, e.g.: -phost is read from PHOST")
 
@@ -41,12 +41,12 @@ func ParseFlags() Flags {
 
 func parseFromEnv() Flags {
 	return Flags{
-		PostgresHost:  getFromEnv("PHOST", "127.0.0.1"),
-		PostgresUser:  getFromEnv("PUSER", "postgres"),
-		PostgresPass:  getFromEnv("PPASS", "postgres"),
-		PostgresPort:  getIntFromEnv("PPORT", 5432),
-		AlgoliaKey:    getFromEnv("ALGOLIAKEY", ""),
-		AlgoliaSecret: getFromEnv("ALGOLIASECRET", ""),
+		PostgresHost: getFromEnv("PHOST", "127.0.0.1"),
+		PostgresUser: getFromEnv("PUSER", "postgres"),
+		PostgresPass: getFromEnv("PPASS", "postgres"),
+		PostgresPort: getIntFromEnv("PPORT", 5432),
+		AlgoliaKey:   getFromEnv("ALGOLIAKEY", ""),
+		AlgoliaID:    getFromEnv("ALGOLIAID", ""),
 	}
 }
 

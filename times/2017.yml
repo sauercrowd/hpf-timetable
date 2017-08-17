@@ -93,7 +93,7 @@ locations:
             stop: '23:30'
       - day: '2017-08-11'
         bands:
-          - name: Kaeptn Peng & Die Tntakel von Delphi
+          - name: Kaeptn Peng & Die Tentakel von Delphi
             start: '00:00'
             stop: '01:15'
           - name: Messer
