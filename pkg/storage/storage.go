@@ -2,7 +2,7 @@ package storage
 
 import (
 	"database/sql"
-	"fmt"
+	"log"
 
 	"github.com/sauercrowd/hpf-timetable/pkg/flags"
 )
@@ -18,10 +18,8 @@ func NewStorage(flags *flags.Flags) (*Storage, error) {
 		return nil, err
 	}
 	ret.db = db
+	if err := setupPostgres(db); err != nil {
+		log.Fatal(err)
+	}
 	return &ret, nil
-}
-
-func newPostgres(flags *flags.Flags) (*sql.DB, error) {
-	dbstr := fmt.Sprintf("postgres://%s:%s@%s:%d/%s?sslmode=disable", flags.PostgresUser, flags.PostgresPass, flags.PostgresHost, flags.PostgresPort, "hpf-timetable")
-	return sql.Open("postgres", dbstr)
 }
