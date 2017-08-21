@@ -8,7 +8,7 @@ import (
 	//Postgres
 	_ "github.com/lib/pq"
 
-	"github.com/sauercrowd/hpf-timetable/pkg/flags"
+	"github.com/sauercrowd/timetable/pkg/flags"
 )
 
 const dbname = "hpftimetable"
@@ -80,7 +80,7 @@ func createLocationTable(db *sql.DB) error {
 }
 
 func createBandTable(db *sql.DB) error {
-	err := db.QueryRow("CREATE TABLE IF NOT EXISTS bands(bandid SERIAL PRIMARY KEY, festivalid INTEGER REFERENCES festivals (festivalid), locationid INTEGER REFERENCES locations (locationid), name TEXT, start timestamp, stop timestamp)").Scan()
+	err := db.QueryRow("CREATE TABLE IF NOT EXISTS bands(bandid SERIAL PRIMARY KEY, festivalid INTEGER REFERENCES festivals (festivalid), locationid INTEGER REFERENCES locations (locationid), name TEXT, start timestamp, stop timestamp, imageurl text, infourl text)").Scan()
 	if err != nil && err != sql.ErrNoRows {
 		return err
 	}

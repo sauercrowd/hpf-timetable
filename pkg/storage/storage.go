@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"log"
 
-	"github.com/sauercrowd/hpf-timetable/pkg/flags"
+	"github.com/sauercrowd/timetable/pkg/flags"
 )
 
 type Storage struct {
