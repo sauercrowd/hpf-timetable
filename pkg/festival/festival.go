@@ -12,11 +12,12 @@ type Day struct {
 }
 
 type Location struct {
-	Name string `yaml:"name"`
-	Days []Day  `yaml:"days"`
+	Name        string `yaml:"name"`
+	Description string `yaml:"description"`
+	Days        []Day  `yaml:"days"`
 }
 
-type TimeTable struct {
+type Festival struct {
 	Name      string     `yaml:"name"`
 	Locations []Location `yaml:"locations"`
 }
