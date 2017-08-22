@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/sauercrowd/hpf-timetable/pkg/flags"
-	"github.com/sauercrowd/hpf-timetable/pkg/storage"
+	"github.com/sauercrowd/timetable/pkg/flags"
+	"github.com/sauercrowd/timetable/pkg/storage"
 )
 
 func main() {

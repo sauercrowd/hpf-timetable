@@ -2,52 +2,50 @@ package storage
 
 import (
 	"context"
+	"database/sql"
 	"fmt"
-	"sync"
 	"time"
 
 	"github.com/sauercrowd/timetable/pkg/festival"
 )
 
-func (s *Storage) AddBands(ctx context.Context, festivalID int, locationID int, day festival.Day) error {
-	ch := make(chan error)
-	var mtx sync.Mutex
-	count := len(day.Bands)
+func addBandsTransaction(ctx context.Context, tx *sql.Tx, errorCh chan error, festivalID int64, locationID int64, day festival.Day) {
+	bandsCh := make(chan error)
 	ctx, cancel := context.WithCancel(ctx)
 	for _, band := range day.Bands {
-		go s.AddBandConcurrent(ctx, &mtx, &count, ch, festivalID, locationID, day.Date, band)
+		go addBandConcurrentTransaction(ctx, tx, bandsCh, festivalID, locationID, day.Date, band)
 	}
-	for n := range ch {
+	count := len(day.Bands)
+	for n := range bandsCh {
+		count--
 		if n != nil {
 			cancel()
-			return n
+			errorCh <- n
+			return
+		}
+		if count <= 0 {
+			break
 		}
 	}
-	//free resources
+	close(bandsCh)
+	//free resources from context
 	cancel()
-	return nil
+	errorCh <- nil
 }
 
-func (s *Storage) AddBandConcurrent(ctx context.Context, mtx *sync.Mutex, count *int, ch chan error, festivalID int, locationID int, date string, band festival.Band) {
+func addBandConcurrentTransaction(ctx context.Context, tx *sql.Tx, errorCh chan error, festivalID int64, locationID int64, date string, band festival.Band) {
 	start, err := time.Parse("2006-01-02 15:04:05", fmt.Sprintf("%s %s", date, band.Start))
 	if err != nil {
-		ch <- err
+		errorCh <- err
+		return
 	}
 	stop, err := time.Parse("2006-01-02 15:04:05", fmt.Sprintf("%s %s", date, band.Stop))
 	if err != nil {
-		ch <- err
+		errorCh <- err
+		return
 	}
-	err = s.db.QueryRowContext(ctx, "INSERT INTO bands(festivalid, locationid, name, start, stop, imageurl, infourl) VALUES($1, $2, $3, $4, $5, $6, $7)",
-		festivalID, locationID, band.Name, start, stop, "", "").Scan()
-	if err != nil {
-		ch <- err
-	}
-	//reduced count and close channel if equal to zero
-	mtx.Lock()
-	newC := (*count) - 1
-	count = &newC
-	mtx.Unlock()
-	if newC <= 0 {
-		close(ch)
-	}
+	//don't care about result
+	_, err = tx.ExecContext(ctx, "INSERT INTO bands(festivalid, locationid, name, start, stop, imageurl, infourl) VALUES($1, $2, $3, $4, $5, $6, $7)",
+		festivalID, locationID, band.Name, start, stop, "", "")
+	errorCh <- err
 }
